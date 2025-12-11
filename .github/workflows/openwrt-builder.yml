@@ -67,6 +67,7 @@ jobs:
         test -d openwrt || git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt && git pull
         # ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        cp patches/rk3528-mangopi-m28c.dts openwrt/target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/rk3528-mangopi-m28c.dts
 
     - name: Load custom feeds
       run: |
